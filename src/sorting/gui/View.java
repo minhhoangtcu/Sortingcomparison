@@ -22,11 +22,15 @@ public class View extends JFrame {
 	private JLabel lblFeedBack;
 	private JLabel lblFile;
 	private JTextPane paneHTMLOutput;
+	private Control control;
 
 	/**
 	 * Create the frame.
 	 */
-	public View() {
+	public View(Control control) {
+		this.control = control;
+		
+		setTitle("Sorting Algorithms Comparision - Minh Hoang");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 500);
 		contentPane = new JPanel();
