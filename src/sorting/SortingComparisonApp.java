@@ -16,9 +16,9 @@ public class SortingComparisonApp {
 	}
 	
 	public SortingComparisonApp() {
-		control = new Control(model, view);
 		model = new Model(control);
 		view = new View(control);
+		control = new Control(model, view);
 	}
 
 }
