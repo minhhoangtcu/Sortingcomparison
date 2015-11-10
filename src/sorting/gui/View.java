@@ -1,17 +1,21 @@
 package sorting.gui;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import net.miginfocom.swing.MigLayout;
-import javax.swing.JScrollPane;
-import javax.swing.JTextPane;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JList;
-import java.awt.Font;
 import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.border.EmptyBorder;
+
+import net.miginfocom.swing.MigLayout;
+import sorting.algorithms.Sort;
 
 public class View extends JFrame {
 
@@ -19,7 +23,7 @@ public class View extends JFrame {
 	private JTextField textFieldSize;
 	private JButton btnChooseFile;
 	private JButton btnSort;
-	private JList<String> list;
+	private JComboBox<String> list;
 	private JLabel lblFeedBack;
 	private JLabel lblFile;
 	private JTextPane paneHTMLOutput;
@@ -63,7 +67,8 @@ public class View extends JFrame {
 		JLabel lblSortingAlgorithm = new JLabel("Sorting Algorithm");
 		panelInput.add(lblSortingAlgorithm, "cell 0 1");
 		
-		list = new JList<String>();
+		DefaultComboBoxModel<String> comboModel = new DefaultComboBoxModel<String>(Sort.SORTING_METHODS);
+		list = new JComboBox<String>(comboModel);
 		panelInput.add(list, "cell 1 1,grow");
 		
 		btnChooseFile = new JButton("Choose File");
@@ -108,8 +113,8 @@ public class View extends JFrame {
 			}
 		}
 	}
-	public String getListSelect() {
-		return list.getSelectedValue();
+	public int getListSelect() {
+		return list.getSelectedIndex();
 	}
 	public void setLblFeedBack(String text) {
 		lblFeedBack.setVisible(true);
