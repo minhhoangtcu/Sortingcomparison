@@ -47,6 +47,7 @@ public class View extends JFrame {
 		contentPane.add(scrollPane, "cell 0 0 3 1,grow");
 		
 		paneHTMLOutput = new JTextPane();
+		paneHTMLOutput.setContentType("text/html");
 		scrollPane.setViewportView(paneHTMLOutput);
 		
 		JPanel panelInput = new JPanel();
@@ -113,7 +114,7 @@ public class View extends JFrame {
 			}
 		}
 	}
-	public int getListSelect() {
+	public int getSelectedSortingMethod() {
 		return list.getSelectedIndex();
 	}
 	public void setLblFeedBack(String text) {
@@ -125,7 +126,7 @@ public class View extends JFrame {
 		lblFile.setVisible(true);
 		lblFile.setText(text);;
 	}
-	public JTextPane getPaneHTMLOutput() {
-		return paneHTMLOutput;
+	public void setPaneHTMLOutput(String text) {
+		paneHTMLOutput.setText(text);
 	}
 }

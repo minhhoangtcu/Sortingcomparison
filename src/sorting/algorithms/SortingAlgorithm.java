@@ -6,6 +6,7 @@ public class SortingAlgorithm<T extends Comparable<T>> {
 	
 	protected int compares, moves;
 	protected T[] output;
+	protected int sortingMethod;
 	
 	public SortingAlgorithm() {
 		compares = 0;
@@ -16,6 +17,7 @@ public class SortingAlgorithm<T extends Comparable<T>> {
 		compares = 0;
 		moves = 0;
 		sort(input);
+		sortingMethod = Sort.DEFAULT;
 	}
 	
 	protected void sort(T[] input) {
@@ -49,5 +51,8 @@ public class SortingAlgorithm<T extends Comparable<T>> {
 	}
 	public int getMoves() {
 		return moves;
+	}
+	public int getSortingMethod() {
+		return sortingMethod;
 	}
 }

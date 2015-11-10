@@ -1,6 +1,7 @@
 package sorting.gui;
 
 import sorting.gui.controllers.FileSelectController;
+import sorting.gui.controllers.SortController;
 
 public class Control {
 	
@@ -12,6 +13,7 @@ public class Control {
 		this.model = model;
 		
 		view.getBtnChooseFile().addActionListener( new FileSelectController(model, view));
+		view.getBtnSort().addActionListener(new SortController(model, view));
 		
 	}
 
