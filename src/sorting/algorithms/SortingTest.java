@@ -11,6 +11,8 @@ public class SortingTest {
 		String[] input = {"d", "c", "b", "a", "e", "f"};
 		SelectionSort<String> sorting = new SelectionSort<>(input);
 		sorting.show();
+		System.out.println("\nCompares: " + sorting.getCompares());
+		System.out.println("Moves: " + sorting.getMoves());
 		
 		System.out.println("\n*****");
 		Integer[] input2 = {1, 10, 3, 4, 8, 5, 6};

@@ -21,9 +21,8 @@ public class SelectionSort<T extends Comparable<T>> {
 				if (less(input[j], input[min])) {
 					min = j;
 				}
-				exchange(input, i, min);
 			}
-			
+			exchange(input, i, min);
 		}
 		output = input;
 	}
