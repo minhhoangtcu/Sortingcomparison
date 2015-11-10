@@ -43,6 +43,9 @@ public class SortingAlgorithm<T extends Comparable<T>> {
 		moves += 3;
 	}
 	
+	public int getLength() {
+		return output.length;
+	}
 	public T[] getOutput() {
 		return output;
 	}

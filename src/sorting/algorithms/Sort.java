@@ -12,5 +12,14 @@ public class Sort {
 	public static final String[] SORTING_METHODS = { "Selection sort", "Insertion sort",
 													"Shell sort", "Merge sort",
 													"Quick sort", "Heap sort"};
-	
+	public static final String[] SORTING_SPEED_COMPARES = {"~(N^2)/2", "",
+															"", "",
+															"", ""};
+	public static final String[] SORTING_SPEED_MOVES = {"3N", "",
+														"", "",
+														"", ""};
+	public static final String[] SORTING_SPEED_EXCHANGES = {"N", "",
+															"", "",
+															"", ""};
+
 }
