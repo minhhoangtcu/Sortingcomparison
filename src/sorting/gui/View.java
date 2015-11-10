@@ -58,7 +58,7 @@ public class View extends JFrame {
 		
 		btnSort = new JButton("Sort");
 		btnSort.setBackground(Color.WHITE);
-		panelInput.add(btnSort, "cell 2 0,grow");
+		panelInput.add(btnSort, "cell 2 1,grow");
 		
 		JLabel lblSortingAlgorithm = new JLabel("Sorting Algorithm");
 		panelInput.add(lblSortingAlgorithm, "cell 0 1");
@@ -68,7 +68,7 @@ public class View extends JFrame {
 		
 		btnChooseFile = new JButton("Choose File");
 		btnChooseFile.setBackground(Color.WHITE);
-		panelInput.add(btnChooseFile, "cell 2 1");
+		panelInput.add(btnChooseFile, "cell 2 0");
 		
 		JPanel panelFeedback = new JPanel();
 		contentPane.add(panelFeedback, "cell 2 1,grow");

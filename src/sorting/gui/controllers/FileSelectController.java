@@ -28,16 +28,21 @@ public class FileSelectController extends Controller implements ActionListener {
 				File selectedFile = fc.getSelectedFile();
 				String path = selectedFile.getAbsolutePath();
 				int size = view.getTextFieldSize();
-				try {
-					String[] output = AlphanumericReader.getKeys(size, path);
-					model.setKeys(output);
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+				setKeysOnModel(size, path);
 			}
 		}
 		else {
 			view.setLblFeedBack("Enter Size!");
+		}
+	}
+	
+	private void setKeysOnModel(int size, String path) {
+		String[] output;
+		try {
+			output = AlphanumericReader.getKeys(size, path);
+			model.setKeys(output);
+		} catch (IOException e) {
+			view.setLblFeedBack("File not found!");
 		}
 	}
 }

@@ -2,8 +2,8 @@ package sorting.gui;
 
 public class Model {
 	
-	Control control;
-	String[] keys;
+	private Control control;
+	private String[] keys;
 
 	public Model(Control control) {
 		this.control = control;
@@ -12,5 +12,7 @@ public class Model {
 	public void setKeys(String[] keys) {
 		this.keys = keys;
 	}
-
+	public String[] getKeys() {
+		return keys;
+	}
 }
