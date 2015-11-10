@@ -1,8 +1,6 @@
 package sorting.algorithms;
 
-import java.util.Arrays;
-
-public class SortingAlgorithm<T extends Comparable<T>> {
+public abstract class SortingAlgorithm<T extends Comparable<T>> {
 	
 	protected int compares, moves;
 	protected T[] output;
@@ -20,10 +18,8 @@ public class SortingAlgorithm<T extends Comparable<T>> {
 		sortingMethod = Sort.DEFAULT;
 	}
 	
-	protected void sort(T[] input) {
-		Arrays.sort(input);
-		output = input;
-	}
+	protected abstract void sort(T[] input);
+	public abstract String getDescription();
 	
 	public void show() {
 		for (T element: output) {
@@ -43,9 +39,6 @@ public class SortingAlgorithm<T extends Comparable<T>> {
 		moves += 3;
 	}
 	
-	public String getDescription() {
-		return "The algorithm default sorting algorithm used by Java";
-	}
 	public int getLength() {
 		return output.length;
 	}
