@@ -43,6 +43,9 @@ public class SortingAlgorithm<T extends Comparable<T>> {
 		moves += 3;
 	}
 	
+	public String getDescription() {
+		return "The algorithm default sorting algorithm used by Java";
+	}
 	public int getLength() {
 		return output.length;
 	}
