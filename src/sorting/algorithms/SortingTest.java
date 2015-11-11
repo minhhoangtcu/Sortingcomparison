@@ -6,6 +6,7 @@ public class SortingTest {
 
 	@Test
 	public void testSelectionSort() {
+		System.out.println("SELECTION SORT");
 		String[] input = {"d", "c", "b", "a", "e", "f"};
 		SelectionSort<String> sorting = new SelectionSort<>(input);
 		sorting.show();
@@ -26,6 +27,18 @@ public class SortingTest {
 		String[] input4 = {"y", "z", "a", "b", "x", "d", "s", "a", "r", "t", "y", "u", "b", "c"};
 		sorting = new SelectionSort<>(input4);
 		sorting.show();
+		System.out.println();
 	}
 
+	@Test
+	public void testMergeSort() {
+		System.out.println("MERGE SORT");
+		String[] input = {"d", "c", "b", "a", "e", "f"};
+		MergeSort<String> sorting = new MergeSort<>(input);
+		sorting.show();
+		System.out.println("\nCompares: " + sorting.getCompares());
+		System.out.println("Moves: " + sorting.getMoves());
+		System.out.println();
+	}
+	
 }

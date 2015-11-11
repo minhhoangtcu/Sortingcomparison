@@ -28,6 +28,7 @@ public abstract class SortingAlgorithm<T extends Comparable<T>> {
 	}
 	
 	protected boolean less(T a, T b) {
+		System.out.println("Comparing " + a + " & " + b);
 		compares++;
 		return a.compareTo(b)<0;
 	}
