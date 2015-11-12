@@ -13,7 +13,7 @@ public class Sort {
 													"Shell sort", "Merge sort",
 													"Quick sort", "Heap sort"};
 	public static final String[] SORTING_SPEED_COMPARES = {"~(N^2)/2", "",
-															"", "",
+															"", "O(N*lg(N))",
 															"", ""};
 	public static final String[] SORTING_SPEED_MOVES = {"3N", "",
 														"", "",

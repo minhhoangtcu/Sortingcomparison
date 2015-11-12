@@ -1,17 +1,14 @@
 package sorting.gui.controllers;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-
 import javax.swing.JFileChooser;
-
 import reader.AlphanumericReader;
 import sorting.gui.Model;
 import sorting.gui.View;
 
-public class FileSelectController extends Controller implements ActionListener {
+public class FileSelectController extends Controller {
 
 	public FileSelectController(Model model, View view) {
 		super(model, view);
@@ -29,6 +26,7 @@ public class FileSelectController extends Controller implements ActionListener {
 				String path = selectedFile.getAbsolutePath();
 				int size = view.getTextFieldSize();
 				setKeysOnModel(size, path);
+				view.setLblFile(selectedFile.getName());
 			}
 		}
 		else {

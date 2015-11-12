@@ -3,6 +3,7 @@ package sorting.gui.controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import sorting.algorithms.MergeSort;
 import sorting.algorithms.SelectionSort;
 import sorting.algorithms.Sort;
 import sorting.gui.Model;
@@ -21,12 +22,13 @@ public class SortController extends Controller implements ActionListener {
 		
 		switch (selection) {
 		case Sort.SELECTION_SORT:
-			SelectionSort sorting = new SelectionSort(model.getKeys());
-			output = HTMLSortingTextGenerator.getInfo(sorting);
+			output = HTMLSortingTextGenerator.getInfo(new SelectionSort<>(model.getKeys()));
 			break;
 		case Sort.INSERTION_SORT:
 		case Sort.SHELL_SORT:
 		case Sort.MERGE_SORT:
+			output = HTMLSortingTextGenerator.getInfo(new MergeSort<>(model.getKeys()));
+			break;
 		case Sort.QUICK_SORT:
 		case Sort.HEAP_SORT:
 		}
