@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import sorting.algorithms.MergeSort;
 import sorting.algorithms.SelectionSort;
-import sorting.algorithms.Sort;
+import sorting.algorithms.SortingMethod;
 import sorting.gui.Model;
 import sorting.gui.View;
 
@@ -17,20 +17,18 @@ public class SortController extends Controller implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		int selection = view.getSelectedSortingMethod();
+		SortingMethod selection = SortingMethod.valueAt(view.getSelectedSortingMethodIndex());
 		String output = null;
 		
 		switch (selection) {
-		case Sort.SELECTION_SORT:
+		case SELECTION:
 			output = HTMLSortingTextGenerator.getInfo(new SelectionSort<>(model.getKeys()));
 			break;
-		case Sort.INSERTION_SORT:
-		case Sort.SHELL_SORT:
-		case Sort.MERGE_SORT:
+		case MERGE:
 			output = HTMLSortingTextGenerator.getInfo(new MergeSort<>(model.getKeys()));
 			break;
-		case Sort.QUICK_SORT:
-		case Sort.HEAP_SORT:
+		default:
+			break;
 		}
 		
 		view.setPaneHTMLOutput(output);

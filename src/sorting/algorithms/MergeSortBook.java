@@ -5,7 +5,7 @@ public class MergeSortBook<T extends Comparable<T>> extends SortingAlgorithm<T> 
 	public MergeSortBook(T[] input) {
 		super();
 		sort(input);
-		sortingMethod = Sort.MERGE_SORT;
+		sortingMethod = SortingMethod.MERGE;
 	}
 
 	@Override

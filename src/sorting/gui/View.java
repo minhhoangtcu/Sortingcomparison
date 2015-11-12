@@ -15,7 +15,7 @@ import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 import net.miginfocom.swing.MigLayout;
-import sorting.algorithms.Sort;
+import sorting.algorithms.SortingMethod;
 
 public class View extends JFrame {
 
@@ -68,7 +68,7 @@ public class View extends JFrame {
 		JLabel lblSortingAlgorithm = new JLabel("Sorting Algorithm");
 		panelInput.add(lblSortingAlgorithm, "cell 0 1");
 		
-		DefaultComboBoxModel<String> comboModel = new DefaultComboBoxModel<String>(Sort.SORTING_METHODS);
+		DefaultComboBoxModel<String> comboModel = new DefaultComboBoxModel<String>(SortingMethod.getAllNames());
 		list = new JComboBox<String>(comboModel);
 		panelInput.add(list, "cell 1 1,grow");
 		
@@ -114,7 +114,7 @@ public class View extends JFrame {
 			}
 		}
 	}
-	public int getSelectedSortingMethod() {
+	public int getSelectedSortingMethodIndex() {
 		return list.getSelectedIndex();
 	}
 	public void setLblFeedBack(String text) {

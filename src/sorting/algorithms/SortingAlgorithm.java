@@ -4,18 +4,11 @@ public abstract class SortingAlgorithm<T extends Comparable<T>> {
 	
 	protected int compares, moves;
 	protected T[] output;
-	protected int sortingMethod;
+	protected SortingMethod sortingMethod;
 	
 	public SortingAlgorithm() {
 		compares = 0;
 		moves = 0;
-	}
-	
-	public SortingAlgorithm(T[] input) {
-		compares = 0;
-		moves = 0;
-		sort(input);
-		sortingMethod = Sort.DEFAULT;
 	}
 	
 	protected abstract void sort(T[] input);
@@ -52,7 +45,7 @@ public abstract class SortingAlgorithm<T extends Comparable<T>> {
 	public int getMoves() {
 		return moves;
 	}
-	public int getSortingMethod() {
+	public SortingMethod getSortingMethod() {
 		return sortingMethod;
 	}
 }

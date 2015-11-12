@@ -5,7 +5,7 @@ public class SelectionSort<T extends Comparable<T>> extends SortingAlgorithm<T> 
 	public SelectionSort(T[] input) {
 		super();
 		sort(input);
-		sortingMethod = Sort.SELECTION_SORT;
+		sortingMethod = SortingMethod.SELECTION;
 	}
 	
 	@Override

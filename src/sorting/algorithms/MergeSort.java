@@ -7,7 +7,7 @@ public class MergeSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 	public MergeSort(T[] input) {
 		super();
 		sort(input);
-		sortingMethod = Sort.MERGE_SORT;
+		sortingMethod = SortingMethod.MERGE;
 	}
 	
 	@Override
