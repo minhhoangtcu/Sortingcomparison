@@ -9,7 +9,7 @@ public class SortingApplicationTest {
 	public static void main(String[] args) throws IOException {
 		SortingComparisonApp app = new SortingComparisonApp();
 		app.view.setVisible(true);
-		int size = 1000;
+		int size = 5000;
 		String path = ReaderTest.RANDOM;
 		app.model.setKeys(AlphanumericReader.getKeys(size, path));
 		app.view.setLblFile(path);
