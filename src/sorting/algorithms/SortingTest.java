@@ -41,4 +41,15 @@ public class SortingTest {
 		System.out.println();
 	}
 	
+	@Test
+	public void testMergeSortBook() {
+		System.out.println("MERGE SORT (algorithm from the book)");
+		String[] input = {"d", "c", "b", "a", "e", "f"};
+		MergeSortBook<String> sorting = new MergeSortBook<>(input);
+		sorting.show();
+		System.out.println("\nCompares: " + sorting.getCompares());
+		System.out.println("Moves: " + sorting.getMoves());
+		System.out.println();
+	}
+	
 }
