@@ -52,4 +52,14 @@ public class SortingTest {
 		System.out.println();
 	}
 	
+	@Test
+	public void testQuickSort() {
+		System.out.println("QUICK SORT");
+		String[] input = {"d", "c", "b", "a", "e", "f"};
+		QuickSort<String> sorting = new QuickSort<>(input);
+		sorting.show();
+		System.out.println("\nCompares: " + sorting.getCompares());
+		System.out.println("Moves: " + sorting.getMoves());
+		System.out.println();
+	}
 }
