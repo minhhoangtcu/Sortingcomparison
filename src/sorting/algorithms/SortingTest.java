@@ -62,4 +62,15 @@ public class SortingTest {
 		System.out.println("Moves: " + sorting.getMoves());
 		System.out.println();
 	}
+	
+	@Test
+	public void testHeapSort() {
+		System.out.println("HEAP SORT");
+		String[] input = {"d", "c", "b", "a", "e", "f"};
+		HeapSort<String> sorting = new HeapSort<>(input);
+		sorting.show();
+		System.out.println("\nCompares: " + sorting.getCompares());
+		System.out.println("Moves: " + sorting.getMoves());
+		System.out.println();
+	}
 }
