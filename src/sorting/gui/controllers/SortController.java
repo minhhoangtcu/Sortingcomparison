@@ -3,6 +3,7 @@ package sorting.gui.controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import sorting.algorithms.MergeSort;
+import sorting.algorithms.QuickSort;
 import sorting.algorithms.SelectionSort;
 import sorting.algorithms.SortingMethod;
 import sorting.gui.Model;
@@ -25,6 +26,9 @@ public class SortController extends Controller implements ActionListener {
 			break;
 		case MERGE:
 			output = HTMLSortingTextGenerator.getInfo(new MergeSort<>(model.getKeys()));
+			break;
+		case QUICK:
+			output = HTMLSortingTextGenerator.getInfo(new QuickSort<>(model.getKeys()));
 			break;
 		default:
 			break;

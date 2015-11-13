@@ -5,7 +5,7 @@ public enum SortingMethod {
 	INSERTION("Insertion sort"), 
 	SHELL("Shell sort"), 
 	MERGE("Merge sort", "O(N*lg(N))"), 
-	QUICK("Quick sort"), 
+	QUICK("Quick sort", "~2N*lnN", "N*lnN","~(N*lnN)/3"), 
 	HEAP("Heap sort");
 
 	String name, speed, moves, exchanges;
