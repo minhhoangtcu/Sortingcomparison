@@ -57,8 +57,7 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Quicksort is a fast sorting algorithm, which is used not only for educational purposes, but widely applied in practice.";
 	}
 	
 
