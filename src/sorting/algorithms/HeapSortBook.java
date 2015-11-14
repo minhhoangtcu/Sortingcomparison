@@ -1,8 +1,8 @@
 package sorting.algorithms;
 
-public class HeapSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
+public class HeapSortBook<T extends Comparable<T>> extends SortingAlgorithm<T> {
 	
-	public HeapSort(T[] input) {
+	public HeapSortBook(T[] input) {
 		super();
 		sort(input);
 		sortingMethod = SortingMethod.HEAP;

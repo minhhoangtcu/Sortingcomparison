@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import reader.AlphanumericReader;
 import reader.ReaderTest;
-import sorting.algorithms.HeapSort;
+import sorting.algorithms.HeapSortBook;
 import sorting.algorithms.MergeSort;
 import sorting.algorithms.QuickSort;
 import sorting.algorithms.SelectionSort;
@@ -38,7 +38,7 @@ public class SortingApplicationTest {
 		
 		switch (m) {
 		case HEAP:
-			return new HeapSort<String>(keys);
+			return new HeapSortBook<String>(keys);
 		case INSERTION:
 		case MERGE:
 			return new MergeSort<String>(keys);

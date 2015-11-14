@@ -22,10 +22,11 @@ public abstract class SortingAlgorithm<T extends Comparable<T>> {
 	}
 	
 	protected void show(T[] input) {
-		System.out.println();
+		System.out.println("Showing all elements in an array");
 		for (T element: input) {
 			System.out.print(element + "  ");
 		}
+		System.out.println();
 	}
 	
 	protected boolean less(T a, T b) {

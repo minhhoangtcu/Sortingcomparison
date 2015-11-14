@@ -63,6 +63,7 @@ public class SortingTest {
 		System.out.println();
 	}
 	
+	@Test
 	public void testQuickSort() {
 		System.out.println("QUICK SORT");
 		String[] input = {"d", "c", "b", "a", "e", "f"};
@@ -77,7 +78,7 @@ public class SortingTest {
 	public void testHeapSort() {
 		System.out.println("HEAP SORT");
 		String[] input = {"d", "c", "b", "a", "e", "f"};
-		HeapSort<String> sorting = new HeapSort<>(input);
+		HeapSortBook2<String> sorting = new HeapSortBook2<>(input);
 		sorting.show();
 		System.out.println("\nCompares: " + sorting.getCompares());
 		System.out.println("Moves: " + sorting.getMoves());
