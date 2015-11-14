@@ -18,35 +18,19 @@ public class SortingApplicationTest {
 	public static void main(String[] args) throws IOException {
 		app.view.setVisible(true);
 		
-		String pathRandom = ReaderTest.RANDOM;
+		int[] sizes = {100, 1000, 2000, 5000};
+		String[] paths = {ReaderTest.RANDOM, ReaderTest.ASCENDING, ReaderTest.DESCENDING};
+		SortingMethod[] methods = {SortingMethod.INSERTION, SortingMethod.MERGE, SortingMethod.QUICK};
 		
-		// 5000; Merge; Random
-		SortingAlgorithm<String> sA = getSorting(SortingMethod.MERGE, pathRandom, 5000);
-		printSorting(sA);
-		
-		// 2000; Merge; Random
-		
-		// 1000; Merge; Random
-		size = 1000;
-		app.model.setKeys(AlphanumericReader.getKeys(size, pathRandom));
-		keys = app.model.getKeys();
-		mS = new MergeSort<>(keys);
-		System.out.println("Merge Sort");
-		System.out.println("Sizes: " + size);
-		System.out.print("\tCompares: " + mS.getCompares());
-		System.out.print("\tMoves: " + mS.getMoves());
-		
-		// 100; Merge; Random
-		size = 100;
-		app.model.setKeys(AlphanumericReader.getKeys(size, pathRandom));
-		keys = app.model.getKeys();
-		mS = new MergeSort<>(keys);
-		System.out.println("Merge Sort");
-		System.out.println("Sizes: " + size);
-		System.out.print("\tCompares: " + mS.getCompares());
-		System.out.print("\tMoves: " + mS.getMoves());
-		
-		app.view.setLblFile(pathRandom);
+		for (SortingMethod method: methods) {
+			for (String file: paths) {
+				System.out.println(method.getName() + "| " + file);
+				for (int size: sizes) {
+					printSorting(getSorting(method, file, size));
+				}
+				System.out.println();
+			}
+		}
 	}
 
 	public static SortingAlgorithm<String> getSorting(SortingMethod m, String path, int size) throws IOException {
@@ -70,10 +54,9 @@ public class SortingApplicationTest {
 	
 	
 	public static void printSorting(SortingAlgorithm<?> s) {
-		System.out.println(s.getSortingMethod().getName());
 		System.out.println("Sizes: " + s.getLength());
 		System.out.print("\tCompares: " + s.getCompares());
-		System.out.print("\tMoves: " + s.getMoves());
+		System.out.print("\tMoves: " + s.getMoves() + "\n");
 	}
 
 }
