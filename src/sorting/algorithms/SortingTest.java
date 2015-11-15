@@ -78,7 +78,7 @@ public class SortingTest {
 	public void testHeapSort() {
 		System.out.println("HEAP SORT");
 		String[] input = {"d", "c", "b", "a", "e", "f"};
-		HeapSortBook2<String> sorting = new HeapSortBook2<>(input);
+		HeapSort<String> sorting = new HeapSort<>(input);
 		sorting.show();
 		System.out.println("\nCompares: " + sorting.getCompares());
 		System.out.println("Moves: " + sorting.getMoves());

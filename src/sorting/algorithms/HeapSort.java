@@ -1,11 +1,26 @@
 package sorting.algorithms;
 
-public class HeapSortBook2<T extends Comparable<T>> extends SortingAlgorithm<T> {
+import java.util.Arrays;
 
-	public HeapSortBook2(T[] input) {
+public class HeapSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
+
+	public HeapSort(T[] input) {
 		super();
-		sort(input);
+		T[] temp = moveArrayToRight(input);
+		sort(temp);
 		sortingMethod = SortingMethod.HEAP;
+	}
+	
+	public HeapSort() {}
+	
+	@SuppressWarnings("unchecked")
+	public T[] moveArrayToRight(T[] input) {
+		T[] temp = (T[]) new Comparable[input.length+1];
+		temp[0] = null;
+		for (int i = 0; i < input.length; i++) {
+			temp[i+1] = input[i];
+		}
+		return temp;
 	}
 	
 	/**
@@ -15,18 +30,18 @@ public class HeapSortBook2<T extends Comparable<T>> extends SortingAlgorithm<T> 
 	 * <p>Algorithm implemented from Dr. Comer's pseudo code</p>
 	 */
 	protected void sort(T[] input) {
-		int n = input.length;
+		int n = input.length-1; // Heap size (not array size)
 		// heapify all subtrees except the subtree containing the root
-		for (int i = (n / 2); i > 0; i--) {
-			heapify(input, 1, i);
+		for (int i = (n / 2); i >= 1; i--) {
+			heapify(input, i, n);
 		}
 		
-		for (int i = n-1; i > 0; i--) {
+		for (int i = n-1; i >= 1; i--) {
 			exchange(input, 1, i+1);
 			heapify(input, 1, i);
 		}
 		
-		output = input;
+		output = Arrays.copyOfRange(input, 1, input.length);
 	}
 
 	/**
@@ -44,7 +59,7 @@ public class HeapSortBook2<T extends Comparable<T>> extends SortingAlgorithm<T> 
 		// move any larger child that exceeds the root key upward one level in the tree
 		while ((j <= n) && notFinished) {
 			// a right child of i also exists in the tree - find max of left and right child
-			if (j < n)
+			if (j < n) // that is, exists a right child
 				if (less(input[j], input[j+1])) // set j to point to the largest child
 					j = j+1;
 			if (!less(temp, input[j]))
