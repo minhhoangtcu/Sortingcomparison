@@ -9,7 +9,7 @@ public class TemplateReader {
 	public enum Template {
 		CONTENT_LIST_TEMPLATE,
 		SORTING_NAME_TEMPLATE,
-		ONE_SORTING_ALGORITHMS;
+		ALGORITHM_AND_DESCRIPTION;
 	}
 	
 	public static String read(Template type) throws IOException {
@@ -18,7 +18,7 @@ public class TemplateReader {
 		case CONTENT_LIST_TEMPLATE:
 			htmlTemplateFile = new FileReader("templates/contentListTemplate.html");
 			break;
-		case ONE_SORTING_ALGORITHMS:
+		case ALGORITHM_AND_DESCRIPTION:
 			htmlTemplateFile = new FileReader("templates/OneAlgorithm.html");
 			break;
 		case SORTING_NAME_TEMPLATE:
