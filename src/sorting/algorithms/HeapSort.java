@@ -66,11 +66,13 @@ public class HeapSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 				notFinished = false; // no more keys -- siftup
 			else {
 				input[(int) j/2] = input[j]; // move the jth key up the tree
+				moves++;
 				j = 2*j;
 			}
 		}
 		
 		input[(int) j/2] = temp; // final placement of the root key
+		moves++;
 	}
 
 	@Override
