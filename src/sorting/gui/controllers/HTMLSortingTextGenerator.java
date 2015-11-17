@@ -49,10 +49,10 @@ public class HTMLSortingTextGenerator {
 	public static String getOneSortingAlgorithmInfoAndStats(SortingAlgorithm<?> sorting) throws IOException {
 		SortingMethod method = sorting.getSortingMethod();
 		String html = TemplateReader.read(Template.ALGORITHM_AND_DESCRIPTION);
-		String name = method.getName();
-		String description = sorting.getDescription();
-		String compares = method.getSpeed();
-		String moves = method.getMoves();
+		String name = (method.getName() != null) ? method.getName() : "NA";
+		String description = (sorting.getDescription() != null) ? sorting.getDescription() : "NA";
+		String compares = (method.getSpeed() != null) ? method.getSpeed() : "NA";
+		String moves = (method.getMoves() != null) ? method.getMoves() : "NA";
 		html = html.replace("$name", name);
 		html = html.replace("$description", description);
 		html = html.replace("$compares", compares);
