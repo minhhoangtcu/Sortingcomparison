@@ -19,7 +19,8 @@ public class SortingApplicationTest {
 				SortingMethod.MERGE,
 				SortingMethod.QUICK,
 				SortingMethod.HEAP,
-				SortingMethod.INSERTION};
+				SortingMethod.INSERTION,
+				SortingMethod.SHELL};
 		
 		StringBuilder builder = new StringBuilder();
 		for (SortingMethod method: methods) {

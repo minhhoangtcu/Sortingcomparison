@@ -10,6 +10,7 @@ import sorting.algorithms.InsertionSort;
 import sorting.algorithms.MergeSort;
 import sorting.algorithms.QuickSort;
 import sorting.algorithms.SelectionSort;
+import sorting.algorithms.ShellSort;
 import sorting.algorithms.SortingAlgorithm;
 import sorting.algorithms.SortingMethod;
 
@@ -39,7 +40,7 @@ public class HTMLSortingTextGenerator {
 		case SELECTION:
 			return new SelectionSort<String>(keys);
 		case SHELL:
-			return null;
+			return new ShellSort<String>(keys);
 		default:
 			return null;
 		}

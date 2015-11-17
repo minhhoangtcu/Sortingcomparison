@@ -2,9 +2,13 @@ package sorting.gui.controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import sorting.algorithms.HeapSort;
+import sorting.algorithms.InsertionSort;
 import sorting.algorithms.MergeSort;
 import sorting.algorithms.QuickSort;
 import sorting.algorithms.SelectionSort;
+import sorting.algorithms.ShellSort;
 import sorting.algorithms.SortingMethod;
 import sorting.gui.Model;
 import sorting.gui.View;
@@ -30,6 +34,14 @@ public class SortController extends Controller implements ActionListener {
 		case QUICK:
 			output = HTMLSortingTextGenerator.getInfo(new QuickSort<>(model.getKeys()));
 			break;
+		case HEAP:
+			output = HTMLSortingTextGenerator.getInfo(new HeapSort<>(model.getKeys()));
+			break;
+		case INSERTION:
+			output = HTMLSortingTextGenerator.getInfo(new InsertionSort<>(model.getKeys()));
+			break;
+		case SHELL:
+			output = HTMLSortingTextGenerator.getInfo(new ShellSort<>(model.getKeys()));
 		default:
 			break;
 		}
