@@ -6,6 +6,7 @@ import reader.AlphanumericReader;
 import reader.TemplateReader;
 import reader.TemplateReader.Template;
 import sorting.algorithms.HeapSort;
+import sorting.algorithms.InsertionSort;
 import sorting.algorithms.MergeSort;
 import sorting.algorithms.QuickSort;
 import sorting.algorithms.SelectionSort;
@@ -30,7 +31,7 @@ public class HTMLSortingTextGenerator {
 		case HEAP:
 			return new HeapSort<String>(keys);
 		case INSERTION:
-			return null;
+			return new InsertionSort<String>(keys);
 		case MERGE:
 			return new MergeSort<String>(keys);
 		case QUICK:
