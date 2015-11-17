@@ -23,8 +23,6 @@ public class HTMLSortingTextGenerator {
 		}
 	}
 	
-	
-	
 	public static SortingAlgorithm<String> getSorting(SortingMethod m, String path, int size) throws IOException {
 		String[] keys = AlphanumericReader.getKeys(size, path);
 		
