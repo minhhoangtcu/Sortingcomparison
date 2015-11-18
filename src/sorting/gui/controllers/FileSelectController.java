@@ -4,9 +4,10 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JFileChooser;
-import reader.AlphanumericReader;
+
 import sorting.gui.Model;
 import sorting.gui.View;
+import sorting.reader.AlphanumericReader;
 
 public class FileSelectController extends Controller {
 

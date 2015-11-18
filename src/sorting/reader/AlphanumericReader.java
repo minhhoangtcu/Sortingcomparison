@@ -1,4 +1,4 @@
-package reader;
+package sorting.reader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

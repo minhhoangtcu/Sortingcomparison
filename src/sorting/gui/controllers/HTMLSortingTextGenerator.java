@@ -3,9 +3,6 @@ package sorting.gui.controllers;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
-import reader.AlphanumericReader;
-import reader.TemplateReader;
-import reader.TemplateReader.Template;
 import sorting.algorithms.HeapSort;
 import sorting.algorithms.InsertionSort;
 import sorting.algorithms.MergeSort;
@@ -14,6 +11,9 @@ import sorting.algorithms.SelectionSort;
 import sorting.algorithms.ShellSort;
 import sorting.algorithms.SortingAlgorithm;
 import sorting.algorithms.SortingMethod;
+import sorting.reader.AlphanumericReader;
+import sorting.reader.TemplateReader;
+import sorting.reader.TemplateReader.Template;
 
 public class HTMLSortingTextGenerator {
 	

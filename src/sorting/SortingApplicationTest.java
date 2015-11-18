@@ -2,9 +2,9 @@ package sorting;
 
 import java.io.IOException;
 
-import reader.ReaderTest;
 import sorting.algorithms.SortingMethod;
 import sorting.gui.controllers.HTMLSortingTextGenerator;
+import sorting.reader.ReaderTest;
 
 public class SortingApplicationTest {
 	
