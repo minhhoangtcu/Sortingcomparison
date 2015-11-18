@@ -16,28 +16,22 @@ public class FileSelectController extends Controller {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (view.isSizeValid()) {
-			JFileChooser fc = new JFileChooser();
-			fc.setDialogTitle("Choose a file with keys to sort");
-			
-			int returnVal = fc.showOpenDialog(view);
-			if (returnVal == JFileChooser.APPROVE_OPTION) {
-				File selectedFile = fc.getSelectedFile();
-				String path = selectedFile.getAbsolutePath();
-				int size = view.getTextFieldSize();
-				setKeysOnModel(size, path);
-				view.setLblFile(selectedFile.getName());
-			}
-		}
-		else {
-			view.setLblFeedBack("Enter Size!");
+		JFileChooser fc = new JFileChooser();
+		fc.setDialogTitle("Choose a file with keys to sort");
+
+		int returnVal = fc.showOpenDialog(view);
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			File selectedFile = fc.getSelectedFile();
+			String path = selectedFile.getAbsolutePath();
+			setKeysOnModel(path);
+			view.setLblFile(selectedFile.getName());
 		}
 	}
 	
-	private void setKeysOnModel(int size, String path) {
+	private void setKeysOnModel(String path) {
 		String[] output;
 		try {
-			output = AlphanumericReader.getKeys(size, path);
+			output = AlphanumericReader.getKeys(path);
 			model.setKeys(output);
 		} catch (IOException e) {
 			view.setLblFeedBack("File not found!");

@@ -1,3 +1,13 @@
+/**
+ * Name: Sorting Algorithms Comparison
+ * Author: Minh, Hoang
+ * 
+ * Purpose: this program enables users to load certain files with data (keys on each line) and sort these provided data. 
+ * There are three main sorting algorithms: merge sort, quick sort and heap sort. 
+ * However, the program also allows user to see the performance of insertion sort, selection sort and shell sort.
+ * 
+ * Restriction: whenever an user want to change the size of dataset, he or see must reload the entire file again.
+ */
 package sorting;
 
 import sorting.gui.Control;
