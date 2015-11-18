@@ -1,8 +1,7 @@
 package sorting;
 
 import java.io.IOException;
-
-import reader.ReaderTest;
+import reader.AlphanumericReader;
 import sorting.algorithms.SortingMethod;
 import sorting.gui.controllers.HTMLSortingTextGenerator;
 
@@ -14,7 +13,7 @@ public class SortingApplicationTest {
 		app.view.setVisible(true);
 		
 		int[] sizes = {100, 1000, 2000, 5000};
-		String[] paths = {ReaderTest.RANDOM, ReaderTest.ASCENDING, ReaderTest.DESCENDING};
+		String[] paths = {AlphanumericReader.RANDOM, AlphanumericReader.ASCENDING, AlphanumericReader.DESCENDING};
 		SortingMethod[] methods = { SortingMethod.SELECTION,
 				SortingMethod.MERGE,
 				SortingMethod.QUICK,

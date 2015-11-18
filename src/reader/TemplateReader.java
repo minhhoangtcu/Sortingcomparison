@@ -16,13 +16,13 @@ public class TemplateReader {
 		FileReader htmlTemplateFile;
 		switch (type) {
 		case CONTENT_LIST_TEMPLATE:
-			htmlTemplateFile = new FileReader("templates/contentListTemplate.html");
+			htmlTemplateFile = new FileReader("bin/templates/contentListTemplate.html");
 			break;
 		case ALGORITHM_AND_DESCRIPTION:
-			htmlTemplateFile = new FileReader("templates/OneAlgorithm.html");
+			htmlTemplateFile = new FileReader("bin/templates/OneAlgorithm.html");
 			break;
 		case SORTING_NAME_TEMPLATE:
-			htmlTemplateFile = new FileReader("templates/sortingNameTemplate.html");
+			htmlTemplateFile = new FileReader("bin/templates/sortingNameTemplate.html");
 			break;
 		default:
 			htmlTemplateFile = null;
