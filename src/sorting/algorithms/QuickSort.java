@@ -55,6 +55,27 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 		exchange(input, lo, j);
 		return j;
 	}
+	
+	private void sortBook(T[] A, int l, int r) {
+		// Sort A[l..r]. The outermost call should be QuickSort(A[0..n-1])
+		if (l < r) {
+			int i = l;
+			int j = r+1;
+			T v = A[l];
+			while (i < j) {
+				i += 1;
+				while (i <= r && less(A[i], v))
+					i += 1;
+				j -= 1;
+				while (j >= l && less(v, A[j]))
+					j -= 1;
+			}
+			if (i <= r)	exchange(A, i, j);
+			exchange(A, j, l);
+			sortBook(A, l, j-1);
+			sortBook(A, j+1, r);
+		}
+	}
 
 	@Override
 	public String getDescription() {
