@@ -1,6 +1,7 @@
 package sorting.gui.controllers;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import reader.AlphanumericReader;
 import reader.TemplateReader;
@@ -69,13 +70,15 @@ public class HTMLSortingTextGenerator {
 	}
 
 	public static String getSortingContentHTML(SortingAlgorithm<?> s) throws IOException {
+		String pattern = "###,###.##";
+		DecimalFormat decimalFormat = new DecimalFormat(pattern);
 		String html = TemplateReader.read(Template.CONTENT_LIST_TEMPLATE);
 		int keys = s.getLength();
 		int compares = s.getCompares();
 		int moves = s.getMoves();
-		html = html.replace("$keys", ""+keys);
-		html = html.replace("$compares", ""+compares);
-		html = html.replace("$moves", ""+moves);
+		html = html.replace("$keys", ""+ decimalFormat.format(keys));
+		html = html.replace("$compares", ""+ decimalFormat.format(compares));
+		html = html.replace("$moves", ""+ decimalFormat.format(moves));
 		return html;
 	}
 	

@@ -23,6 +23,7 @@ public class SortingApplicationTest {
 				SortingMethod.SHELL};
 		
 		StringBuilder builder = new StringBuilder();
+		builder.append("<div style='text-align: right; font-style: italic'>Results for initially testing 3 files</div>");
 		for (SortingMethod method: methods) {
 			for (String file: paths) {
 				builder.append(HTMLSortingTextGenerator.getSortingNameHTML(method, file));
