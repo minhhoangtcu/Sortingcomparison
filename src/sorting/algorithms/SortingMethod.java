@@ -1,7 +1,7 @@
 package sorting.algorithms;
 
 public enum SortingMethod {
-	SELECTION("Selection sort", "N^2/2 to N^2", "3N", "N"), 
+	SELECTION("Selection sort", "N^2/2", "3N", "N"), 
 	INSERTION("Insertion sort", "N^2/4", "(3/4)*N^2", "N^2/4"), 
 	SHELL("Shell sort", "N*lg(N) to N^2"), 
 	MERGE("Merge sort", "O(N*lg(N))"), 
