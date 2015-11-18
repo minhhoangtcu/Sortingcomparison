@@ -1,7 +1,5 @@
 package sorting.algorithms;
 
-import java.util.ArrayList;
-
 public class MergeSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 	
 	public MergeSort(T[] input) {
@@ -9,56 +7,53 @@ public class MergeSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 		sort(input);
 		sortingMethod = SortingMethod.MERGE;
 	}
-	
+
 	@Override
 	public String getDescription() {
 		return "Mergesort is a divide and conquer algorithm.";
 	}
-
 	
 	@Override
 	protected void sort(T[] input) {
 		sort(input, 0, input.length-1);
 		output = input;
 	}
-
-	private void sort(T[] input, int low, int high) {
-		if (high <= low) return;
-		int mid = (low+high)/2;
-		sort(input, low, mid);
-		sort(input, mid+1, high);
-		merge(input, low, mid, high);
-	}
 	
-	private void merge(T[] input, int low, int mid, int high) {
-		int i = low, j = mid+1;
-		ArrayList<T> tempList = new ArrayList<>(high-low+1);
+	@SuppressWarnings("unchecked")
+	private void sort(T[] data, int min, int max) {
+		T[] temp;
+		int index1, left, right;
 		
-		while (i <= mid | j <= high) {
-			if (i == mid+1) {
-				while (j != high+1) {
-					tempList.add(input[j++]);
-					moves++;
-				}
-			}
-			else if (j == high+1) {
-				while (i != mid+1) {
-					tempList.add(input[i++]);
-					moves++;
-				}
-			}
-			else if (less(input[i], input[j])) {
-				tempList.add(input[i++]);
-				moves++;
-			}
-			else {
-				tempList.add(input[j++]);
-				moves++;
-			}
+		// return on list of length one
+		if (min == max)
+			return;
+		
+		// find the length and the midpoint of the list
+		int size = max - min + 1;
+		int pivot = (min + max) / 2;
+		temp = (T[]) (new Comparable[size]);
+		
+		sort(data, min, pivot);
+		sort(data, pivot + 1, max);
+		
+		for (index1 = 0; index1 < size; index1++) {
+			temp[index1] = data[min+index1];
+			moves++;
 		}
 		
-		for (T in: tempList) {
-			input[low++] = in;
+		left = 0;
+		right = pivot - min + 1;
+		for (index1 = 0; index1 < size; index1++) {
+			if (right <= max - min)
+				if (left <= pivot - min)
+					if (less( temp[right], temp[left]))
+						data[index1 + min] = temp[right++];
+					else
+						data[index1 + min] = temp[left++];
+				else
+					data[index1 + min] = temp[right++];
+			else
+				data[index1 + min] = temp[left++];
 			moves++;
 		}
 	}
