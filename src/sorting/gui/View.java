@@ -37,11 +37,11 @@ public class View extends JFrame {
 		
 		setTitle("Sorting Algorithms Comparision - Minh Hoang");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 500);
+		setBounds(100, 100, 700, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[33%,grow][33%][33%,grow]", "[90%][10%]"));
+		contentPane.setLayout(new MigLayout("", "[30%][20%][50%]", "[90%][10%]"));
 		
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, "cell 0 0 3 1,grow");
@@ -58,23 +58,26 @@ public class View extends JFrame {
 		panelInput.add(lblSortingSize, "cell 0 0,alignx trailing");
 		
 		textFieldSize = new JTextField();
+		textFieldSize.setEditable(false);
 		panelInput.add(textFieldSize, "cell 1 0,growx");
 		textFieldSize.setColumns(10);
 		
 		btnSort = new JButton("Sort");
+		btnSort.setEnabled(false);
 		btnSort.setBackground(Color.WHITE);
-		panelInput.add(btnSort, "cell 2 1,grow");
+		panelInput.add(btnSort, "cell 2 0,grow");
 		
 		JLabel lblSortingAlgorithm = new JLabel("Sorting Algorithm");
-		panelInput.add(lblSortingAlgorithm, "cell 0 1");
+		panelInput.add(lblSortingAlgorithm, "cell 0 1,alignx trailing");
 		
 		DefaultComboBoxModel<String> comboModel = new DefaultComboBoxModel<String>(SortingMethod.getAllNames());
 		list = new JComboBox<String>(comboModel);
+		list.setEnabled(false);
 		panelInput.add(list, "cell 1 1,grow");
 		
 		btnChooseFile = new JButton("Choose File");
 		btnChooseFile.setBackground(Color.WHITE);
-		panelInput.add(btnChooseFile, "cell 2 0");
+		panelInput.add(btnChooseFile, "cell 2 1,growx");
 		
 		JPanel panelFeedback = new JPanel();
 		contentPane.add(panelFeedback, "cell 2 1,grow");
@@ -86,7 +89,7 @@ public class View extends JFrame {
 		lblFeedBack.setFont(new Font("Tahoma", Font.BOLD, 12));
 		panelFeedback.add(lblFeedBack, "cell 0 0,alignx center,growy");
 		
-		lblFile = new JLabel("file");
+		lblFile = new JLabel("please choose a file");
 		lblFile.setVisible(false);
 		lblFile.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		panelFeedback.add(lblFile, "cell 0 1,alignx right,growy");
@@ -97,6 +100,11 @@ public class View extends JFrame {
 	}
 	public JButton getBtnSort() {
 		return btnSort;
+	}
+	public void enableInputs() {
+		textFieldSize.setEditable(true);
+		list.setEnabled(true);
+		btnSort.setEnabled(true);
 	}
 	public int getTextFieldSize() throws NumberFormatException {
 		return Integer.parseInt(textFieldSize.getText());

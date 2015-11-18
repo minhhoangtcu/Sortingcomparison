@@ -7,6 +7,7 @@ public class Model {
 
 	public Model(Control control) {
 		this.control = control;
+		keys = null;
 	}
 
 	public void setKeys(String[] keys) {

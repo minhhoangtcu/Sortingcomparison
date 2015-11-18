@@ -25,6 +25,7 @@ public class FileSelectController extends Controller {
 			String path = selectedFile.getAbsolutePath();
 			setKeysOnModel(path);
 			view.setLblFile(selectedFile.getName());
+			view.enableInputs();
 		}
 	}
 	
