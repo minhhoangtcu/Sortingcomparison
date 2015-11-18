@@ -2,6 +2,7 @@ package sorting.gui.controllers;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 
 import sorting.algorithms.HeapSort;
 import sorting.algorithms.InsertionSort;
@@ -29,6 +30,26 @@ public class HTMLSortingTextGenerator {
 	public static SortingAlgorithm<String> getSorting(SortingMethod m, String path, int size) throws IOException {
 		String[] keys = AlphanumericReader.getKeys(size, path);
 		
+		switch (m) {
+		case HEAP:
+			return new HeapSort<String>(keys);
+		case INSERTION:
+			return new InsertionSort<String>(keys);
+		case MERGE:
+			return new MergeSort<String>(keys);
+		case QUICK:
+			return new QuickSort<String>(keys);
+		case SELECTION:
+			return new SelectionSort<String>(keys);
+		case SHELL:
+			return new ShellSort<String>(keys);
+		default:
+			return null;
+		}
+	}
+	
+	public static SortingAlgorithm<String> getSorting(SortingMethod m, String[] keys, int size) throws IOException {
+		keys = Arrays.copyOfRange(keys, 0, size);
 		switch (m) {
 		case HEAP:
 			return new HeapSort<String>(keys);

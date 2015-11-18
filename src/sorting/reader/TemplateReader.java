@@ -16,14 +16,17 @@ public class TemplateReader {
 		FileReader htmlTemplateFile;
 		switch (type) {
 		case CONTENT_LIST_TEMPLATE:
-			htmlTemplateFile = new FileReader("templates/contentListTemplate.html");
-			break;
+			return "<ul><li>Number of Keys: <b>$keys</b></li><li>Number of Compares: <b>$compares</b></li><li>Number of Moves: <b>$moves</b></li></ul>";
+//			htmlTemplateFile = new FileReader("templates/contentListTemplate.html");
+//			break;
 		case ALGORITHM_AND_DESCRIPTION:
-			htmlTemplateFile = new FileReader("templates/OneAlgorithm.html");
-			break;
+			return "<h1 style='color: #551A8B; text-align: center'>$name</h1><div style='font-style: italic; margin: 0px'>	<p>		$description	</p><p style='text-align: center'>		Expected compares: <b>$compares</b> and moves: <b>$moves</b>	</p></div>";
+//			htmlTemplateFile = new FileReader("templates/OneAlgorithm.html");
+//			break;
 		case SORTING_NAME_TEMPLATE:
-			htmlTemplateFile = new FileReader("templates/sortingNameTemplate.html");
-			break;
+			return "<h2 style='color: #551A8B'>$name - $file</h2>";
+//			htmlTemplateFile = new FileReader("templates/sortingNameTemplate.html");
+//			break;
 		default:
 			htmlTemplateFile = null;
 		}

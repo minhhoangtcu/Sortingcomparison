@@ -1,10 +1,13 @@
 package sorting;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
+import datasets.Data;
 import sorting.algorithms.SortingMethod;
 import sorting.gui.controllers.HTMLSortingTextGenerator;
-import sorting.reader.ReaderTest;
 
 public class SortingApplicationTest {
 	
@@ -14,7 +17,9 @@ public class SortingApplicationTest {
 		app.view.setVisible(true);
 		
 		int[] sizes = {100, 1000, 2000, 5000};
-		String[] paths = {ReaderTest.RANDOM, ReaderTest.ASCENDING, ReaderTest.DESCENDING};
+		Map<String, String[]> keys = new HashMap<>();
+		keys.put("Random" , Data.RAN_KEYS);keys.put("Ascending", Data.ASC_KEYS); keys.put("Descending", Data.DES_KEYS);  
+		
 		SortingMethod[] methods = { SortingMethod.SELECTION,
 				SortingMethod.MERGE,
 				SortingMethod.QUICK,
@@ -25,10 +30,10 @@ public class SortingApplicationTest {
 		StringBuilder builder = new StringBuilder();
 		builder.append("<div style='text-align: right; font-style: italic'>Results for initially testing 3 files</div>");
 		for (SortingMethod method: methods) {
-			for (String file: paths) {
-				builder.append(HTMLSortingTextGenerator.getSortingNameHTML(method, file));
+			for (Entry<String, String[]> entry: keys.entrySet()) {
+				builder.append(HTMLSortingTextGenerator.getSortingNameHTML(method, entry.getKey()));
 				for (int size: sizes) {
-					builder.append(HTMLSortingTextGenerator.getSortingContentHTML(HTMLSortingTextGenerator.getSorting(method, file, size)));
+					builder.append(HTMLSortingTextGenerator.getSortingContentHTML(HTMLSortingTextGenerator.getSorting(method, entry.getValue(), size)));
 				}
 			}
 		}

@@ -6,10 +6,6 @@ import org.junit.Test;
 
 public class ReaderTest {
 	
-	public static final String ASCENDING = "datasets/Ascending.dat";
-	public static final String DESCENDING = "datasets/Descending.dat";
-	public static final String RANDOM = "datasets/Random.dat";
-
 	@Test
 	public void testReader() {
 		try {
