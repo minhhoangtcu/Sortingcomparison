@@ -1,3 +1,6 @@
+/**
+ * Run this class if you want to test out the program, else run SortingComparisonApp
+ */
 package sorting;
 
 import java.io.IOException;

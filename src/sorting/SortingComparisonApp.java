@@ -6,7 +6,6 @@
  * There are three main sorting algorithms: merge sort, quick sort and heap sort. 
  * However, the program also allows user to see the performance of insertion sort, selection sort and shell sort.
  * 
- * Restriction: whenever an user want to change the size of dataset, he or see must reload the entire file again.
  */
 package sorting;
 
