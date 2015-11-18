@@ -13,6 +13,11 @@ public class HeapSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 	
 	public HeapSort() {}
 	
+	@Override
+	public String getDescription() {
+		return "Heapsort can be thought of as an improved selection sort: like that algorithm, it divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region.";
+	}
+	
 	@SuppressWarnings("unchecked")
 	public T[] moveArrayToRight(T[] input) {
 		T[] temp = (T[]) new Comparable[input.length+1];
@@ -73,11 +78,5 @@ public class HeapSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 		
 		input[(int) j/2] = temp; // final placement of the root key
 		moves++;
-	}
-
-	@Override
-	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

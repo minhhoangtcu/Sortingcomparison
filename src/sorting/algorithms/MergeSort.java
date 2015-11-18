@@ -11,6 +11,12 @@ public class MergeSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 	}
 	
 	@Override
+	public String getDescription() {
+		return "Mergesort is a divide and conquer algorithm.";
+	}
+
+	
+	@Override
 	protected void sort(T[] input) {
 		sort(input, 0, input.length-1);
 		output = input;
@@ -56,10 +62,4 @@ public class MergeSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 			moves++;
 		}
 	}
-
-	@Override
-	public String getDescription() {
-		return "Mergesort is a divide and conquer algorithm.";
-	}
-
 }

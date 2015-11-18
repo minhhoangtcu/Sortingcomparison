@@ -28,7 +28,7 @@ public class ShellSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 
 	@Override
 	public String getDescription() {
-		return null;
+		return "Shellsort is an in-place comparison sort. The method starts by sorting pairs of elements far apart from each other, then progressively reducing the gap between elements to be compared. Starting with far apart elements can move some out-of-place elements into position faster than a simple nearest neighbor exchange.";
 	}
 
 }
