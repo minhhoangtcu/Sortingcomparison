@@ -14,7 +14,6 @@ public class Control {
 		
 		view.getBtnChooseFile().addActionListener( new FileSelectController(model, view));
 		view.getBtnSort().addActionListener(new SortController(model, view));
-		
 	}
 
 }

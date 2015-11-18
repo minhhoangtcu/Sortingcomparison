@@ -7,9 +7,9 @@ import java.util.LinkedList;
 
 public class AlphanumericReader {
 	
-	public static final String ASCENDING = "bin/data/Ascending.dat";
-	public static final String DESCENDING = "bin/data/Descending.dat";
-	public static final String RANDOM = "bin/data/Random.dat";
+	public static final String ASCENDING = "data/Ascending.dat";
+	public static final String DESCENDING = "data/Descending.dat";
+	public static final String RANDOM = "data/Random.dat";
 
 	/**
 	 * <p> Return an array containing all the keys (lines).</p>
