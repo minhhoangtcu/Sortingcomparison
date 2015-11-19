@@ -11,7 +11,7 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 
 	@Override
 	protected void sort(T[] input) {
-		sort(input, 0, input.length-1);
+		sortBook(input, 0, input.length-1);
 		output = input;
 	}
 
@@ -69,13 +69,18 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 				j -= 1;
 				while (j >= l && less(v, A[j]))
 					j -= 1;
+				if (i <= r)	
+					exchange(A, i, j);
 			}
-			if (i <= r)	exchange(A, i, j);
+			if (i <= r)	
+				exchange(A, i, j);
 			exchange(A, j, l);
 			sortBook(A, l, j-1);
 			sortBook(A, j+1, r);
 		}
 	}
+	
+	
 
 	@Override
 	public String getDescription() {
