@@ -41,6 +41,11 @@ public abstract class SortingAlgorithm<T extends Comparable<T>> {
 		moves += 3;
 	}
 	
+	protected T address(T input) {
+		moves++;
+		return input;
+	}
+	
 	public int getLength() {
 		return output.length;
 	}

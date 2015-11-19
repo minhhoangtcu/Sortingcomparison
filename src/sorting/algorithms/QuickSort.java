@@ -42,7 +42,7 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 	 */
 	private int partition(T[] input, int lo, int hi) {
 		int i = lo, j = hi+1; // left and right pointers
-		T v = input[lo];
+		T v = address(input[lo]);
 		while (true) {
 			while (less(input[++i], v))
 				if (i == hi) break;
@@ -61,7 +61,7 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 		if (l < r) {
 			int i = l;
 			int j = r+1;
-			T v = A[l];
+			T v = address(A[l]);
 			while (i < j) {
 				i += 1;
 				while (i <= r && less(A[i], v))

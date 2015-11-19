@@ -58,7 +58,7 @@ public class HeapSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 	 */
 	private void heapify(T[] input, int i, int n) {
 		boolean notFinished = true;
-		T temp = input[i];
+		T temp = address(input[i]);
 		int j = 2*i; // j points to the left child of i
 		
 		// move any larger child that exceeds the root key upward one level in the tree
@@ -70,13 +70,11 @@ public class HeapSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 			if (!less(temp, input[j]))
 				notFinished = false; // no more keys -- siftup
 			else {
-				input[(int) j/2] = input[j]; // move the jth key up the tree
-				moves++;
+				input[(int) j/2] = address(input[j]); // move the jth key up the tree
 				j = 2*j;
 			}
 		}
 		
-		input[(int) j/2] = temp; // final placement of the root key
-		moves++;
+		input[(int) j/2] = address(temp); // final placement of the root key
 	}
 }
